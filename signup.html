@@ -6,23 +6,28 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	
 </head>
     <body>
         <form name = "signup" method = "post" action = "">
 			<p>&nbsp;</p>
 			<label for = "lblemail">Email:</label>
 			<input type = "text" name = "txtemail" id = "txtemail" value = "">
-			
+			<br />
 			<label for = "lblname">Name:</label>
 			<input type = "text" name = "txtname" id = "txtname" value = "">
-			
-			<label for="lblpassword">Password:</label>
-			<input type="password" name="txtpassword" id="txtpassword" value="" autocomplete="off">
-			
-			<label for="lblcpassword">Confirm Password:</label>
-			<input type="password" name="txtcpassword" id="txtcpassword" value="" autocomplete="off">
+			<br />
+			<label for = "lblpassword">Password:</label>
+			<input type = "password" name="txtpassword" id="txtpassword" value="" autocomplete="off">
+			<br />
+			<label for = "lblcpassword">Confirm Password:</label>
+			<input type = "password" name = "txtcpassword" id="txtcpassword" value="" autocomplete="off">
 			<p>&nbsp;</p>
-			<a href="index.html" data-role="button">BACK</a>
+			<p>
+			<a href = "success.html" data-role="button" data-inline="true" data-rel="dialog">SIGN UP</a>
+			<a href = "index.html" data-role="button" data-inline="true">BACK</a>
+			</p>
+			
 		</form>
     </body>
 </html>
