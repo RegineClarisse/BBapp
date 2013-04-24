@@ -12,16 +12,19 @@
     <h1>Create Group</h1>
 	</div>
 	<p> &nbsp;</p>
-	<label for="text-1">Group Name:</label>
-		<input type="text" name="text-basic" id="text-basic" value="">
+	<label for="lblgroup">Group Name:</label>
+		<input type="text" name="txtgroup" id="txtgroup" value="">
 		
-	<label for="textarea-1">Members:</label>
-    <textarea cols="60" rows="30"name="textarea-1" id="textarea-1"></textarea>
+	<label for="lblmembers">Members:</label>
+    <textarea cols="60" rows="30"name="txtmembers" id="txtmembers"></textarea>
 	
 	<p> &nbsp;</p>	
 	
-	<a href="success.html" data-role="button" data-theme="b" data-rel="dialog" data-transition="pop" data-inline="true">Sign Up!</a>
-	<a href="index.html" data-role="button" data-theme="e" data-transition="pop" data-inline="true">Cancel </a>
+	<a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-transition="pop">SIGN UP</a>
+	<a href="index.html" data-role="button" data-theme="e" data-transition="pop" data-inline="true">CANCEL</a>
+	
+	<div data-role="popup" id="popupBasic">
+	<p>Successful!</p>
 
 </body>
 </html>
