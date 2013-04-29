@@ -4,37 +4,50 @@
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<style>
+		div { width: 150px; height: 50px; margin: auto; }
+		.mod { background: blue; cursor: default; }
+	</style>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-	
+		
 </head>
     <body>
 		<div data-role="header">
 		<h1>Sign Up</h1>
 		</div>
 	
-        <form name = "signup" method = "post" action = "">
+        <form name = "signup" method = "post" action = "" onsubmit="return validateForm()">
 			<p>&nbsp;</p>
 			<label for = "lblemail">Email:</label>
-			<input type = "text" name = "txtemail" id = "txtemail" value = "">
+			<div><input type = "text" name = "txtemail" id = "txtemail" value = ""></div>
 			<br />
 			<label for = "lblname">Name:</label>
-			<input type = "text" name = "txtname" id = "txtname" value = "">
+			<div><input type = "text" name = "txtname" id = "txtname" value = ""></div>
 			<br />
 			<label for = "lblpassword">Password:</label>
-			<input type = "password" name="txtpassword" id="txtpassword" value="" autocomplete="off">
+			<div><input type = "password" name="txtpassword" id="txtpassword" value="" autocomplete="off"></div>
 			<br />
 			<label for = "lblcpassword">Confirm Password:</label>
-			<input type = "password" name = "txtcpassword" id="txtcpassword" value="" autocomplete="off">
+			<div><input type = "password" name = "txtcpassword" id="txtcpassword" value="" autocomplete="off"></div>
 			<p>&nbsp;</p>
-			<p>
+			
 			<a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-transition="pop">SIGN UP</a>
 			<a href = "index.html" data-role="button" data-inline="true">BACK</a>
-			</p>
-			
+				
 			<div data-role="popup" id="popupBasic">
 			<p>Successful!</p>
-			</div>
+			
 		</form>
+		
+		<script>
+			(function() {
+			  var modWidth = 100;
+			  $("div").one('click', function () {
+				$(this).width(modWidth).addClass("mod");
+			  modWidth -= 8;
+			  });
+			})();
+		</script>
     </body>
 </html>
