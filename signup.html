@@ -7,22 +7,26 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
 	<style> .ui-page { 
-			background-image: url("silver.jpg");
-			background-size: cover;
-			} 
+				background-image: url("silver1.jpg");
+				background-size: cover;
+				background-repeat: repeat;
+			}
+			.ui-body-c, .ui-overlay-c { 
+				text-shadow:0 0 0; 
+			}
 	</style>
     </head>
 	
     <body>
-		<div id="header" data-role = "header" data-theme = "a">
+		<div id="header" data-role = "header" data-theme = "a" style = "font-family: Verdana, Geneva, Sans-Serif;">
         <h1>SIGN UP</h1>
         </div>
         
-		<div id = "signup" style = "width:400px;height:50px;margin:auto;">
+		<div id = "signup" style = "width:400px;height:50px;margin:auto;font-style: bold;font-family: Verdana, Geneva, Sans-Serif;">
         <form name = "signup" method = "post" action = "">
 			<p>&nbsp;</p>
 			<label for = "lblemail">Email:</label>
-			<input type = "text" name = "txtemail" id = "txtemail" value = "email@xmailer.co" data-clr-btn = "true" style="width:400px;color:#A9A9A9;">
+			<input type = "text" name = "txtemail" id = "txtemail" value = "" data-clr-btn = "true" style="width:400px;">
 			<br />
 			<label for = "lblname">Name:</label>
 			<input type = "text" name = "txtname" id = "txtname" value = "" data-clr-btn = "true">
@@ -33,15 +37,15 @@
 			<label for = "lblcpassword">Confirm Password:</label>
 			<input type = "password" name = "txtcpassword" id="txtcpassword" value="" autocomplete="off" data-clr-btn = "true">
 			<p>&nbsp;</p>
-			<a href="#popupBasic" data-rel="popup" data-role="button" data-transition = "pop" data-theme="a" data-corners="false" style=";margin:auto;width:200px;">SIGN UP</a><br />
-			<a href = "index.html" data-transition="fade" data-role="button" data-theme="a" data-corners="false" style="margin:auto;width:200px;">BACK</a>
+			<a href="#popupBasic" data-rel="popup" data-role="button" data-transition = "pop" data-theme="a" data-corners="false" style=";margin:auto;width:200px;font-style: bold;font-family: Verdana, Geneva, Sans-Serif;">SIGN UP</a><br />
+			<a href = "index.html" data-transition="fade" data-role="button" data-theme="a" data-corners="false" style="margin:auto;width:200px;font-style: bold;font-family: Verdana, Geneva, Sans-Serif;">BACK</a>
 				
 			
 		</form>
         </div>
 		
 		<div data-role="popup" id="popupBasic" style="font-family:Comic Sans, Comic Sans MS, cursive;">
-            p>Successful!</p>
+            <p>Successful!</p>
 		</div>
 		<form>
 		
@@ -49,7 +53,7 @@
     
         $("div.signup").resizable ({
           handles : "e"
-        });
+        });-->
         
         </script>
     </body>
