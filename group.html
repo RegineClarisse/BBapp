@@ -7,10 +7,15 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<style> .ui-page { 
+			background-image: url("silver.jpg");
+			background-size: cover;
+			background-repeat: repeat;
+			} 
+		</style>
     </head>
     <body>
-	
-        <div id="header" data-role = "header" data-theme = "e" style="color:#00BFFF;">
+        <div id="header" data-role = "header" data-theme = "a">
           <h1>CREATE GROUP</h1>
         </div>
         
@@ -18,15 +23,14 @@
           <form name = "group" method = "post" action = "">
             <p>&nbsp; </p>
             <label for="lblgroup">Group Name:</label>
-            <input type="text" name="txtgroup" id="txtgroup" data-clr-btn = "true" value="">
-                
+            <input type="text" name="txtgroup" id="txtgroup" data-clr-btn = "true" value="" data-corners="false" >
             <label for="lblmembers">Members:</label>
-            <textarea cols="80" rows="10" name="txtmembers" id="txtmembers" data-clr-btn = "true"></textarea>
+            <textarea cols="80" rows="10" name="txtmembers" id="txtmembers" data-clr-btn = "true" data-corners="false" style="color:#A9A9A9;"></textarea>
             
             <p>&nbsp; </p>	
             
-            <a href="#popupBasic" data-rel="popup" data-role="button" data-transition="pop" data-theme="e" data-corners="false" style="color:#00BFFF;margin:auto;width:200px">SIGN UP</a><br />
-            <a href = "index.html" data-role="button" data-theme="e" data-corners="false" style="color:#00BFFF;margin:auto;width:200px">CANCEL</a>
+            <a href="#popupBasic" data-rel="popup" data-role="button" data-transition="pop" data-theme="a" data-corners="false" style="margin:auto;width:200px;">SIGN UP</a><br />
+            <a href = "index.html" data-transition="fade" data-role="button" data-theme="a" data-corners="false" style="margin:auto;width:200px;">CANCEL</a>
             
             <div data-role="popup" id="popupBasic">
               <p>Successful!</p> 
