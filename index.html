@@ -26,91 +26,94 @@
 		}
 				
 		function pageScrollTo(id){
-	jQuery('html, body').animate({
-		scrollTop: jQuery("#"+id).offset().top-75
-	}, 100);
-}
+		jQuery('html, body').animate({
+			scrollTop: jQuery("#"+id).offset().top-75
+		}, 100);
+		}
+		
 		function getIdentityData(){
-	alert("Location: Long = "+blackberry.location.longitude+" Lat = "+blackberry.location.latitude);
-	//alert(blackberry.location.GPSSupported)
-	/*
-	for(x in blackberry.location){
-		alert(x+"="+blackberry.location[x]);
-	}
-	*/
-}
+		alert("Location: Long = "+blackberry.location.longitude+" Lat = "+blackberry.location.latitude);
+		//alert(blackberry.location.GPSSupported)
+		/*
+		for(x in blackberry.location){
+			alert(x+"="+blackberry.location[x]);
+		}
+		*/
+		}
 
 		if(!blackberry){
-	var blackberry = {};
-	blackberry.identity = {};
-	blackberry.identity.IMEI = "default";
-}
-if(!blackberry.identity){
-	blackberry.identity = {};
-	blackberry.identity.IMEI = "default";
-}
+		var blackberry = {};
+		blackberry.identity = {};
+		blackberry.identity.IMEI = "default";
+		}
+		
+		if(!blackberry.identity){
+			blackberry.identity = {};
+			blackberry.identity.IMEI = "default";
+		}
 			
 		function createGroup(){
-	//alert(blackberry.identity.IMEI);
-	datax = jQuery("#cgform").serialize()+"&IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
-	jsonx = {};
-	jQuery.ajax({
-		type: "POST",
-		url: "http://xmailer.co/api.php?action=creategroup&_="+(new Date()).getTime(),
-		data: datax,
-		success: function(){
-			
-			//alert(IMEI); //IMEI is set in the server
-		},
-		dataType: "script"
-	});
-}
+		//alert(blackberry.identity.IMEI);
+		datax = jQuery("#cgform").serialize()+"&IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
+		jsonx = {};
+		jQuery.ajax({
+			type: "POST",
+			url: "http://xmailer.co/api.php?action=creategroup&_="+(new Date()).getTime(),
+			data: datax,
+			success: function(){
+				
+				//alert(IMEI); //IMEI is set in the server
+			},
+			dataType: "script"
+		});
+		}
 		
 		function createAccount(){
-	//alert(blackberry.identity.IMEI);
-	datax = jQuery("#caform").serialize()+"&IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
-	jsonx = {};
-	jQuery.ajax({
-		type: "POST",
-		url: "http://xmailer.co/api.php?action=createaccount&_="+(new Date()).getTime(),
-		data: datax,
-		success: function(){
-			if(jsonx.cpanelresult.error){
-				alert(jsonx.cpanelresult.error);
-			}
-			else if(jsonx.cpanelresult.data[0].result==1){
-				alert("Successfully Created an Account!");
-				jQuery("#caform")[0].reset();
-			}
-			//alert(IMEI); //IMEI is set in the server
-		},
-		dataType: "script"
-	});
-}
+		//alert(blackberry.identity.IMEI);
+		datax = jQuery("#caform").serialize()+"&IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
+		jsonx = {};
+		jQuery.ajax({
+			type: "POST",
+			url: "http://xmailer.co/api.php?action=createaccount&_="+(new Date()).getTime(),
+			data: datax,
+			success: function(){
+				if(jsonx.cpanelresult.error){
+					alert(jsonx.cpanelresult.error);
+				}
+				else if(jsonx.cpanelresult.data[0].result==1){
+					alert("Successfully Created an Account!");
+					jQuery("#caform")[0].reset();
+				}
+				//alert(IMEI); //IMEI is set in the server
+			},
+			dataType: "script"
+		});
+		}
 			
 		function showIt(idx){
 	
-	jQuery(".panel").hide();
-	jQuery("#"+idx).show();
-	jQuery("#imei").html(blackberry.identity.IMEI);
-	if(idx=='buttons'){
-		pageScrollTo('buttons');
-	}
-	
-}
+		jQuery(".panel").hide();
+		jQuery("#"+idx).show();
+		jQuery("#imei").html(blackberry.identity.IMEI);
+		if(idx=='buttons'){
+			pageScrollTo('buttons');
+		}
+		
+		}
 			
 		function getEmails(){
-	datax = "IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
-	jQuery.ajax({
-		type: "POST",
-		url: "http://xmailer.co/api.php?action=getemails&_="+(new Date()).getTime()+"&"+datax,
-		data: datax,
-		success: function(){
-			jQuery("#emails").html(html);
-		},
-		dataType: "script"
-	});
-}
+		datax = "IMEI="+((blackberry.identity.IMEI)? blackberry.identity.IMEI : "");
+		jQuery.ajax({
+			type: "POST",
+			url: "http://xmailer.co/api.php?action=getemails&_="+(new Date()).getTime()+"&"+datax,
+			data: datax,
+			success: function(){
+				jQuery("#emails").html(html);
+			},
+			dataType: "script"
+		});
+		}
+		
 		</script>
 		
 		<style> 
@@ -144,8 +147,8 @@ if(!blackberry.identity){
 		</div>
 		
 		<!--end of index-->
-		
 		<!--account-->
+		
 		<div id='my' style='display:none;color:#000000;text-align:center;padding-top:30px;margin:auto;width:300px;' class='panel'>
 			IMEI: 
 		<div id='imei' style='display:inline'></div>
@@ -191,7 +194,7 @@ if(!blackberry.identity){
 		</div>
 		       
 		<!--end of group-->
-		<!--sos-->
+		<!--sos
 		
 		<div class = 'panel' id = 'sos' style = 'width:300px;height:50px;margin:auto;font-weight:bold;font-family: Verdana, Geneva, Sans-Serif;'>
 			<form id = "sosform" action = "">
@@ -203,8 +206,8 @@ if(!blackberry.identity){
 			</form>
 		</div>
 		
-		<!--end of sos-->
-		<!--success-->
+		end of sos-->
+		<!--success
 		
 		<div class = 'panel' id = 'success' style = 'width:300px;height:50px;margin:auto;font-weight:bold;font-family: Verdana, Geneva, Sans-Serif;'>
 			<h3 style = 'margin:auto;color:#ffffff;text-align:center;padding-top:50px;'>Successful!</h3>
@@ -219,10 +222,11 @@ if(!blackberry.identity){
 			<input type='button' onclick='showIt("buttons")' data-theme='a' data-corners='false' value='BACK TO HOME' />
 		</div>
 		
-		<!--end of success-->
+		end of success-->
 		
 		<script>
 			showIt("buttons");
 		</script>
+		
 	</body>
 </html> 
